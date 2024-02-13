@@ -1,36 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".GameWonFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".TitleFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/you_win">
+        android:layout_height="match_parent">
 
         <ImageView
             android:id="@+id/img_android_trivia"
             android:layout_width="0dp"
-            android:layout_height="450dp"
+            android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/default_margin"
-            android:layout_marginVertical="@dimen/larger_margin"
-            android:src="@drawable/you_win"
+            android:src="@drawable/android_trivia"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.25" />
 
         <Button
             android:id="@+id/btn_play"
+            style="@style/button_style"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/default_margin"
-            android:text="@string/next_match"
+            android:text="@string/play"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/img_android_trivia"
-            style="@style/button_style" />
+            app:layout_constraintTop_toBottomOf="@+id/img_android_trivia" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -8,5 +8,6 @@
     <string name="title_android_trivia_question">Android Trivia (%1$d/%2$d)</string>
     <string name="try_again">TRY AGAIN?</string>
     <string name="submit">SUBMIT</string>
+    <string name="play">PLAY</string>
 
 </resources>

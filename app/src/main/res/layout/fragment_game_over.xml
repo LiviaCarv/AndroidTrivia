@@ -10,7 +10,7 @@
         android:background="@color/try_again">
 
         <ImageView
-            android:id="@+id/img_you_lose"
+            android:id="@+id/img_android_trivia"
             android:layout_width="0dp"
             android:layout_height="360dp"
             android:layout_marginHorizontal="@dimen/default_margin"
@@ -22,14 +22,14 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/btn_try_again"
+            android:id="@+id/btn_play"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/default_margin"
             android:text="@string/try_again"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/img_you_lose"
+            app:layout_constraintTop_toBottomOf="@+id/img_android_trivia"
             style="@style/button_style" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
