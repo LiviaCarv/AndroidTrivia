@@ -2,4 +2,7 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="you_win">#B2D593</color>
+    <color name="you_win_dark">#DA6DBC25</color>
+    <color name="button_background_color">#979A95</color>
 </resources>
