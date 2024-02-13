@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
 import com.example.androidtrivia.databinding.FragmentGameBinding
 
 class GameFragment : Fragment() {
@@ -16,7 +17,7 @@ class GameFragment : Fragment() {
     private val questions: MutableList<Question> = mutableListOf(
         Question(text = "What does the acronym 'ADB' stand for in Android development?",
             answers = listOf("Android Debug Bridge", "Android Debugging", "Android Development Bridge", "Application Debug Bridge")),
-        Question(text = "Which layout manager is used for creating a grid of equally sized cells in Android?",
+        Question(text = "Layout manager used for creating a grid of equally sized cells in Android?",
             answers = listOf("GridLayoutManager", "LinearLayoutManager", "StaggeredGridLayoutManager", "FlexboxLayoutManager")),
         Question(text = "Which component is responsible for managing the lifecycle of an Android application?",
             answers = listOf("Activity", "Service", "BroadcastReceiver", "ContentProvider")),
@@ -57,7 +58,7 @@ class GameFragment : Fragment() {
         // Bind this fragment class to the layout
         binding.game = this
 
-        binding.btnSubmit.setOnClickListener{
+        binding.btnSubmit.setOnClickListener{view: View ->
             // checa o botão de rádio que foi selecionado pelo usuário.
             // se == -1, nenhum botao foi selecionado
             val checkedId = binding.rdGroupQuestion.checkedRadioButtonId
@@ -78,10 +79,10 @@ class GameFragment : Fragment() {
                         //  notificar a UI de que os dados foram atualizados e que a interface precisa ser redesenhada.
                         binding.invalidateAll()
                     } else {
-                        // Navigate to the game won fragment
+                        view.findNavController().navigate(R.id.action_gameFragment_to_gameWonFragment)
                     }
                 } else {
-                    // Navigate to the game over fragment
+                    view.findNavController().navigate(R.id.action_gameFragment_to_gameOverFragment)
                 }
             }
         }
