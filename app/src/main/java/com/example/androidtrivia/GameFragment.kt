@@ -57,7 +57,36 @@ class GameFragment : Fragment() {
         // Bind this fragment class to the layout
         binding.game = this
 
+        binding.btnSubmit.setOnClickListener{
+            // checa o botão de rádio que foi selecionado pelo usuário.
+            // se == -1, nenhum botao foi selecionado
+            val checkedId = binding.rdGroupQuestion.checkedRadioButtonId
+            if (checkedId != -1) {
+                var answerIndex = 0
+                when(checkedId) {
+                    R.id.secondAnswerRadioButton -> answerIndex = 1
+                    R.id.thirdAnswerRadioButton -> answerIndex = 2
+                    R.id.fourthAnswerRadioButton -> answerIndex = 3
 
+                }
+                if (answers[answerIndex] == currentQuestion.answers[0]) {
+                    questionIndex++
+                    if (questionIndex < numQuestions) {
+                        currentQuestion = questions[questionIndex]
+                        setQuestion()
+
+                        //  notificar a UI de que os dados foram atualizados e que a interface precisa ser redesenhada.
+                        binding.invalidateAll()
+                    } else {
+                        // Navigate to the game won fragment
+                    }
+                } else {
+                    // Navigate to the game over fragment
+                }
+            }
+        }
+
+        return binding.root
     }
 
     private fun randomizeQuestions() {
