@@ -29,10 +29,8 @@ class TitleFragment : Fragment() {
             DataBindingUtil.inflate(inflater, R.layout.fragment_title, container, false)
 
         binding.btnPlay.setOnClickListener(
-            Navigation.createNavigateOnClickListener(R.id.action_titleFragment_to_gameFragment)
+            Navigation.createNavigateOnClickListener(TitleFragmentDirections.actionTitleFragmentToGameFragment())
         )
-
-        // EXPLAIN THIS PIECE OF CODE
         val menuHost: MenuHost = requireActivity()
         menuHost.addMenuProvider(
             object : MenuProvider {
@@ -42,7 +40,7 @@ class TitleFragment : Fragment() {
 
                 override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
                     return NavigationUI.onNavDestinationSelected(
-                        menuItem!!,
+                        menuItem,
                         requireView().findNavController()
                     )
                 }
