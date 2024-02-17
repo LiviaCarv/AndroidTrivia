@@ -13,5 +13,6 @@
     <string name="play">PLAY</string>
     <string name="title_about_trivia">About Trivia\n</string>
     <string name="share">Share</string>
+    <string name="trivia_rules">Trivia Rules</string>
 
 </resources>
