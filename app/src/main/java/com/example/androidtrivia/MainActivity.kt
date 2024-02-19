@@ -4,8 +4,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import androidx.drawerlayout.widget.DrawerLayout
-import androidx.navigation.NavController
-import androidx.navigation.NavDestination
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.example.androidtrivia.databinding.ActivityMainBinding
@@ -22,7 +20,7 @@ class MainActivity : AppCompatActivity() {
 
         NavigationUI.setupActionBarWithNavController(this, navController, drawerLayout)
 
-        navController.addOnDestinationChangedListener {nController , navDestination, args ->
+        navController.addOnDestinationChangedListener { nController, navDestination, args ->
             if (navDestination.id == nController.graph.startDestinationId) {
                 drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED)
             } else {
