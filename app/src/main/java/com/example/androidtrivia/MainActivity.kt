@@ -27,7 +27,6 @@ class MainActivity : AppCompatActivity() {
                 drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED)
             }
         }
-
         NavigationUI.setupWithNavController(binding.navView, navController)
     }
 
